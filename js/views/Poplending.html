@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+    <head>
+
+        <title>fsgbu, TrueSaaS POC</title>
+
+        <link href="css/netdna.bootstrapcdn.com_bootstrap_3.0.1_css_bootstrap-theme.min.css" rel="stylesheet" type="text/css"/><!--
+-->     <link href="css/netdna.bootstrapcdn.com_bootstrap_3.0.1_css_bootstrap.min.css" rel="stylesheet" type="text/css"/><!--
+                                                                                                                         <link href="../../css/libs/style.css" rel="stylesheet" type="text/css"/>
+        
+        <!-- Bootstrap -->
+       
+
+       <!-- <link rel="stylesheet" href="/styles.css" />-->
+
+    </head>
+
+    <body class="container">
+        <nav class="navbar navbar-default navbar-inverse" role="navigation" style="margin-bottom: 2px;">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+
+                <a title="Spring IO" href="https://www.oracle.com/index.html" shape="rect"><img height="50" src="img/download.png" /></a>
+                &nbsp;&nbsp;&nbsp;
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+
+                <ul class="nav navbar-nav navbar-right">
+
+                    <li><a href="https://www.oracle.com/index.html" shape="rect"><img alt="Oracle" title="Oracle" height="30" src="img/download.png" /></a></li>
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+
+    </body>
+
+    <body>
+        <div class="container">
+            <!--Row with two equal columns-->
+            <div class="row">
+                <div class="col-sm-6 well "><!--Column left-->
+
+
+
+                    <div class="page-header">
+                        <h3>Reference Implementation- <small>The Sample Cloud Application</small></h3>
+                    </div>
+                    <h4>Overview</h4> <p> <small>
+                            <ul>
+                                Sample cloud app to be used to evaluate different technologies as part of project Tech Stack.
+                                For proper evaluation purpose, design of the app should be made close to target architecture as much as possible.
+
+                            </ul>
+                            <h4>Reference Implementation Objectives</h4>
+                            <ul>
+                                <li>Developed following 12 factor microservice design principles.</li>
+                                <li>Deployed in JCS. </li>
+                                <li>Support  dynamic scale out , load balancing ,High Availability.</li>
+                                <li>Should serve End to End use case.</li>
+                                <li>Use of micro service patterns such as:Circuit Breaker, Cluster Lock, Data Consistency.</li>
+                                <li>Should be able to run as Jar/War for OACCS/Bare Metal ( EE/SE).</li>
+                                <li>RI should include outcomes of different components of True SaaS project like logging, configuration etc ( EE/SE).</li>
+                            </ul>
+                        </small></p>
+                </div>
+                <div class="col-sm-6">
+
+
+                    <div class="panel panel-default">
+                        <div class="panel-body"><strong><i>Referenced Implementation Topology</i></strong>
+
+                            <!--  <img  width="200"
+                                            th:src="@{/img/topology.png}" src="img/topology.png" /> -->
+
+                            <img style="height: 430px;width: 520px" src="img/topology1_1.jpg" class="img-thumbnail" alt="Thumbnail Image" />
+                        </div>
+                    </div>
+
+
+
+                </div> <!--Column right-->
+            </div> <!-- row -->
+
+
+            <div class="row">
+
+                <div class="panel panel-default">
+                    <!--  <div class="panel-body">Follow Below Buttons for Useful Links.</div>  -->
+                    <div class="panel-footer clearfix">
+                        <div class="pull-left">
+                            <p><strong><i> FSGBU POP Lending Cloud App </i></strong></p>
+                        </div>
+                        <div id='buttons-container' class="pull-right">
+                            
+                         <!-- ko foreach: router.states -->
+                         <!-- ko if: $index() == 1 -->
+                        <button id= "search" style="height: 30px;font-size:100%;color:black;background-color:red; "
+                                    data-bind="attr: {id: id}, click: $parent.buttonClick1,
+                       ojComponent: { component: 'ojButton', label: 'Search' }">
+                            </button>
+                         <!-- /ko -->
+                         <!-- ko if: $index() == 2 -->
+                        <button id= "monitor" style="height: 30px;font-size:100%;color:black;background-color:yellow; "
+                                    data-bind="attr: {id: id}, click: $parent.buttonClick2,
+                       ojComponent: { component: 'ojButton', label: 'Monitor Health'}">
+                            </button>
+                         <!-- /ko -->
+                         <!-- ko if: $index() == 3 -->
+                        <button id= "dev" style="height: 30px;font-size:100%;color:black;background-color:pink; "
+                                    data-bind="attr: {id: id}, click: $parent.buttonClick3,
+                       ojComponent: { component: 'ojButton', label: 'Development Help'}">
+                            </button>
+                         <!-- /ko -->
+                         
+                         <!-- ko if: $index() == 4 -->
+                        <button id= "sample" style="height: 30px;font-size:100%;color:black;background-color:green; "
+                                    data-bind="attr: {id: id}, click: $parent.buttonClick4,
+                       ojComponent: { component: 'ojButton', label: 'Sample Party1'}">
+                            </button>
+                         <!-- /ko -->
+                         
+                        <!-- /ko -->
+                        </div>
+                        
+<!--                        <div id='buttons-container' class="pull-right">
+
+                            <button id= "search" style="height: 30px;font-size:100%;color:black;background-color:red; "
+                                    data-bind="click: buttonClick1,
+                       ojComponent: { component: 'ojButton', label: 'Search' }">
+                            </button>
+                            <button id= "monitor" style="height: 30px;font-size:100%;color:black;background-color:yellow; "
+                                    data-bind="click: buttonClick2,
+                       ojComponent: { component: 'ojButton', label: 'Monitor Health' }">
+                            </button>
+                            <button id= "dev" style="height: 30px;font-size:100%;color:black;background-color:grey; "
+                                    data-bind="click: buttonClick3,
+                       ojComponent: { component: 'ojButton', label: 'Development Help' }">
+                            </button>
+                            <button id= "sample" style="height: 30px;font-size:100%;color:black;background-color:green; "
+                                    data-bind="click: buttonClick4,
+                       ojComponent: { component: 'ojButton', label: 'Sample Party1' }">
+                            </button>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+
+
+        </div> <!-- Container -->
+
+
+        <footer align="center"><p style="font-size:14px; color:red; font-weight:bold; font-style:italic;">&copy; Copyright Oracle Financial, 2016</p></footer>
+
+    </body>
+</html>
