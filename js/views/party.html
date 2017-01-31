@@ -51,10 +51,10 @@
                            data-bind="ojComponent: {component: 'ojInputText', 
                            value: partyname}"/> 
                 </div>
-                
-                
+
+
                 <br/>
-                
+
             </div>
 
             <div class= "oj-form">
@@ -71,22 +71,26 @@
                 </div>
 
                 <!-- ko if: errorMessage-->
-                  <!-- ko if: tempPartyName-->
+                <!-- ko if: tempPartyName-->
                 <div style="color: red; font-size: 14px">
                     Party <span style="color: red; font-size: 14px" data-bind="text: errorMessage"></span> for ' <span data-bind="text: tempPartyName"></span> '
-               </div>
-                  <!--/ko -->
-                  <!-- ko ifnot: tempPartyName-->
-                  
-                  <div style="color: red; font-size: 14px">
-                    Party <span style="color: red; font-size: 14px" data-bind="text: errorMessage"></span>
-               </div>
-                  
+                </div>
                 <!--/ko -->
-                
-             <!--/ko --> 
+                <!-- ko ifnot: tempPartyName-->
 
+                <div style="color: red; font-size: 14px">
+                    Party <span style="color: red; font-size: 14px" data-bind="text: errorMessage"></span>
+                </div>
 
+                <!--/ko -->
+
+                <!--/ko --> 
+
+                <!-- ko if: showMessageBothCred-->
+                <div class= "login-submit">
+                        <span style="color: red; font-size: 14px">Invalid search credentials..search either via Id or via name only </span>
+                    </div>
+              <!--/ko --> 
             </div>
         </div>
 

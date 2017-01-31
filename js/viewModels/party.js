@@ -24,55 +24,66 @@ define(['ojs/ojcore', 'knockout', 'partyFactory', 'ojs/ojinputtext', 'ojs/ojknoc
         self.partyDataWhenId = ko.observable();
         self.errorMessage = ko.observable(false);
         self.tempPartyName = ko.observable(null);
-        self.partyIdDisabled = ko.observable(false);
+        self.showMessageBothCred = ko.observable(false);
         self.buttonClick = function (data, event) {
-            if(self.partyid() === null && self.partyname() === null) {
+            if (self.partyid() === null && self.partyname() === null) {
                 self.errorMessage(false);
+                self.showMessageBothCred(false);
                 self.showMessage(true);
-                
+
+            } else if (self.partyid() !== null && self.partyname() !== null) {
+                self.errorMessage(false);
+                self.showMessage(false);
+                self.showMessageBothCred(true);
+                self.partyid(null);
+                self.partyname(null);
+
+
             } else {
-    
-            self.partyCollection = partyFactory.createPartyModel(self.partyid(), self.partyname());
 
-            self.partyCollection.fetch({
-                success: function () {
+                self.partyCollection = partyFactory.createPartyModel(self.partyid(), self.partyname());
 
-                    console.log(self.partyCollection);
-                    if (self.partyname() !== null) {
-                       // document.getElementById('partyid').disabled = true;
-                        
-                        var length = self.partyCollection.changes.length;
-                        console.log(length);
-                        for (var i = 0; i < length; i++) {
-                            self.partyCollection.attributes[i].name = self.partyCollection.attributes[i].firstName + " " + self.partyCollection.attributes[i].lastName;
-                            self.partyData.push(self.partyCollection.attributes[i]);
+                self.partyCollection.fetch({
+                    success: function () {
+
+                        console.log(self.partyCollection);
+                        if (self.partyname() !== null) {
+                            // document.getElementById('partyid').disabled = true;
+
+                            var length = self.partyCollection.changes.length;
+                            console.log(length);
+                            for (var i = 0; i < length; i++) {
+                                self.partyCollection.attributes[i].name = self.partyCollection.attributes[i].firstName + " " + self.partyCollection.attributes[i].lastName;
+                                self.partyData.push(self.partyCollection.attributes[i]);
+                            }
+                            console.log(self.partyData());
+                            self.datasource = new oj.ArrayTableDataSource(self.partyData, {idAttribute: 'id'});
+                        } else if (self.partyid() !== null) {
+                            //document.getElementById('partyname').disabled = true;
+
+                            self.partyDataWhenId(self.partyCollection.attributes);
                         }
-                        console.log(self.partyData());
-                        self.datasource = new oj.ArrayTableDataSource(self.partyData, {idAttribute: 'id'});
-                    } else if (self.partyid() !== null) {
-                        //document.getElementById('partyname').disabled = true;
-                        
-                        self.partyDataWhenId(self.partyCollection.attributes);
-                    }
-                    self.partyDataFetched(true);
-                },
+                        self.partyDataFetched(true);
+                    },
 
-                error: function (jqXHR, textStatus, errorThrown) {
-                    console.log(jqXHR);
-                    console.log(textStatus);
-                    console.log(errorThrown);
-                    self.showMessage(false);
-                    self.errorMessage(errorThrown);
-                    
-                    if(self.partyname) {
-                    self.tempPartyName(self.partyname());
-                   }
-                
-                    self.partyid(null);
-                    self.partyname(null);
-                    
-                }});
-           }
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        console.log(jqXHR);
+                        console.log(textStatus);
+                        console.log(errorThrown);
+                        self.showMessageBothCred(false);
+                        self.showMessage(false);
+                        self.errorMessage(errorThrown);
+
+                        if (self.partyname) {
+                            self.tempPartyName(self.partyname());
+                        }
+
+                        self.partyid(null);
+                        self.partyname(null);
+
+                    }});
+
+            }
         },
                 self.partyClicked = function (data, event) {
                     self.partyid(null);
@@ -80,6 +91,7 @@ define(['ojs/ojcore', 'knockout', 'partyFactory', 'ojs/ojinputtext', 'ojs/ojknoc
                     self.partyData.removeAll();
                     self.showMessage(false);
                     self.errorMessage(false);
+                    self.showMessageBothCred(false);
                     self.partyDataFetched(false);
 
                 },

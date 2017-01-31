@@ -7,16 +7,16 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojbutton'],
         function (oj, ko, $)
         {
 
-            function monitorViewModel() {
+            function monitorContentViewModel() {
                 var self = this;
-
                 self.partyClicked = function (data, event) {
                     self.router = oj.Router.rootInstance;
                     self.router.stateId('party');
                 }
+
             }
 
-            return monitorViewModel;
+            return monitorContentViewModel;
 
         });
 
