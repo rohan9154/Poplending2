@@ -6,23 +6,18 @@
 
         <title>fsgbu, TrueSaaS POC</title>
 
-        <link href="css/netdna.bootstrapcdn.com_bootstrap_3.0.1_css_bootstrap-theme.min.css" rel="stylesheet" type="text/css"/><!--
--->     <link href="css/netdna.bootstrapcdn.com_bootstrap_3.0.1_css_bootstrap.min.css" rel="stylesheet" type="text/css"/><!--
-                                                                                                                         <link href="../../css/libs/style.css" rel="stylesheet" type="text/css"/>
-        
-        <!-- Bootstrap -->
-       
-
-       <!-- <link rel="stylesheet" href="/styles.css" />-->
+        <link href="css/netdna.bootstrapcdn.com_bootstrap_3.0.1_css_bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
+     <link href="css/netdna.bootstrapcdn.com_bootstrap_3.0.1_css_bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="css/libs/style.css" rel="stylesheet" type="text/css"/>
 
     </head>
 
     <body class="container">
         <nav class="navbar navbar-default navbar-inverse" role="navigation" style="margin-bottom: 2px;">
             <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
+            <div class="">
 
-                <a title="Spring IO" href="https://www.oracle.com/index.html" shape="rect"><img height="50" src="img/download.png" /></a>
+                <a title="Spring IO" href="https://www.oracle.com/index.html" shape="rect"><img height="40"  src="img/oracle_new.png" /></a>
                 &nbsp;&nbsp;&nbsp;
             </div>
 
@@ -30,11 +25,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
 
-                <ul class="nav navbar-nav navbar-right">
-
-                    <li><a href="https://www.oracle.com/index.html" shape="rect"><img alt="Oracle" title="Oracle" height="30" src="img/download.png" /></a></li>
-
-                </ul>
+               
             </div>
             <!-- /.navbar-collapse -->
         </nav>
@@ -77,9 +68,9 @@
                         <div class="panel-body"><strong><i>Referenced Implementation Topology</i></strong>
 
                             <!--  <img  width="200"
-                                            th:src="@{/img/topology.png}" src="img/topology.png" /> -->
+                                            th:src="@{/img/topology.png}" src="img/topology.png"/> -->
 
-                            <img style="height: 430px;width: 520px" src="img/topology1_1.jpg" class="img-thumbnail" alt="Thumbnail Image" />
+                            <img style="height: 430px;width: 520px" src="img/topology1_1.jpg" class="img-thumbnail" alt="Thumbnail Image"/>
                         </div>
                     </div>
 
@@ -97,37 +88,37 @@
                         <div class="pull-left">
                             <p><strong><i> FSGBU POP Lending Cloud App </i></strong></p>
                         </div>
-                        <div id='buttons-container' class="pull-right">
+<!--                        <div id='buttons-container' class="pull-right">
                             
-                         <!-- ko foreach: router.states -->
-                         <!-- ko if: $index() == 1 -->
-                        <button id= "search" style="height: 30px;font-size:100%;color:black;background-color:red; "
+                          ko foreach: router.states 
+                          ko if: $index() == 1 
+                        <button id= "search" style="height: 30px;font-size:100%;color:black;background-color:#ce1f1f;"
                                     data-bind="attr: {id: id}, click: $parent.buttonClick1,
-                       ojComponent: { component: 'ojButton', label: 'Search' }">
+                       ojComponent: { component: 'ojButton', label: 'Search'}">
                             </button>
-                         <!-- /ko -->
-                         <!-- ko if: $index() == 2 -->
-                        <button id= "monitor" style="height: 30px;font-size:100%;color:black;background-color:yellow; "
+                          /ko 
+                          ko if: $index() == 2 
+                        <button id= "monitor" style="height: 30px;font-size:100%;color:black;background-color:#b5b513; "
                                     data-bind="attr: {id: id}, click: $parent.buttonClick2,
                        ojComponent: { component: 'ojButton', label: 'Monitor Health'}">
                             </button>
-                         <!-- /ko -->
-                         <!-- ko if: $index() == 3 -->
-                        <button id= "dev" style="height: 30px;font-size:100%;color:black;background-color:pink; "
+                          /ko 
+                          ko if: $index() == 3 
+                        <button id= "dev" style="height: 30px;font-size:100%;color:black;background-color:#25987c; "
                                     data-bind="attr: {id: id}, click: $parent.buttonClick3,
                        ojComponent: { component: 'ojButton', label: 'Development Help'}">
                             </button>
-                         <!-- /ko -->
+                          /ko 
                          
-                         <!-- ko if: $index() == 4 -->
-                        <button id= "sample" style="height: 30px;font-size:100%;color:black;background-color:green; "
+                          ko if: $index() == 4 
+                        <button id= "sample" style="height: 30px;font-size:100%;color:black;background-color:#2893ea; "
                                     data-bind="attr: {id: id}, click: $parent.buttonClick4,
                        ojComponent: { component: 'ojButton', label: 'Sample Party1'}">
                             </button>
-                         <!-- /ko -->
+                          /ko 
                          
-                        <!-- /ko -->
-                        </div>
+                         /ko 
+                        </div>-->
                         
 <!--                        <div id='buttons-container' class="pull-right">
 

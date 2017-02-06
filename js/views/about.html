@@ -6,7 +6,7 @@ and open the template in the editor.
 -->
 <html>
       <head>
-    <title>fsgbu, TrueSaaS POC</title>
+    <title>Oracle JET Starter Template - Web Nav Bar</title>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,7 +14,7 @@ and open the template in the editor.
 
     <!-- This is the main css file for the default Alta theme -->
     <!-- injector:theme -->
-    <link href="css/libs/oj/v2.2.0/alta/oj-alta-min.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="css/libs/oj/v2.3.0/alta/oj-alta-min.css" type="text/css"/>
     <!-- endinjector -->
     
     <!-- This contains icon fonts used by the starter template -->
@@ -45,9 +45,8 @@ and open the template in the editor.
       <header role="banner" class="oj-web-applayout-header">
         <div class="oj-web-applayout-max-width oj-flex-bar oj-sm-align-items-center">
           <div data-bind="css: smScreen() ? 'oj-flex-bar-center-absolute' : 'oj-flex-bar-middle oj-sm-align-items-baseline'">
-            <img height="80"  src="/Poplending2/img/oracle_jet.png" />
-            <h1 class="oj-temp-color" title="Application Name" data-bind="text: appName"></h1> <br> <br>
-            
+            <span role="img" class="oj-sm-only-hide oj-icon demo-oracle-icon" title="Oracle Logo" alt="Oracle Logo"></span>
+            <h1 class="oj-web-applayout-header-title" title="Application Name" data-bind="text: appName"></h1>
           </div>
           <div class="oj-flex-bar-end">
             <!-- Responsive Toolbar -->
@@ -66,7 +65,6 @@ and open the template in the editor.
               </ul>
             </div>
           </div>
-            <h1 class="oj-temp-color" title="Bank Name" data-bind="text: appName2"></h1>
         </div>
         <div role="navigation" class="oj-web-applayout-max-width oj-web-applayout-navbar">
           <div data-bind="ojComponent: {component: 'ojNavigationList',

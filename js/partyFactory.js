@@ -12,7 +12,7 @@ define(['ojs/ojcore', 'ojs/ojmodel', 'knockout'], function (oj, ko) {
     var PartyFactory = {
 
         //partyid: ko.observable(this.partyId),
-        resourceUrl: "http://10.152.173.72:32491/party/",
+        resourceUrl: "http://129.146.23.163:32035/party/",
 
         createPartyModel: function (partyId, partyname) {
             console.log(partyId);
