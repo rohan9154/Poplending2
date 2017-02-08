@@ -9,9 +9,17 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojbutton'],
 
             function monitorContentViewModel() {
                 var self = this;
+                self.router = oj.Router.rootInstance;
                 self.partyClicked = function (data, event) {
-                    self.router = oj.Router.rootInstance;
+                    
                     self.router.stateId('party');
+                }
+                
+                self.backToHome = function (data, event) {
+                    
+                   
+                   self.router.stateId('Poplending'); 
+                    
                 }
 
             }
