@@ -9,13 +9,9 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojbutton', 'o
         function viewModel() {
             var self = this;
             self.pieSeriesValue = ko.observableArray(
-                        [{name: "Not Fitting into a Team", items: [2]},
-                            {name: "No Career Progression", items: [2]},
-                            {name: "Salary", items: [4]},
-                            {name: "Seeking New Skills", items: [3]},
-                            {name: "Personal/Family Reasons", items: [3]},
-                            {name: "Work Environment", items: [1]}
-                        ]);
+                        [{name: "Health Monitoring", items: [8]},
+                            {name: "Development", items: [7]}
+                            ]);
             var converterFactory = oj.Validation.converterFactory('number');
             self.percentConverter = converterFactory.createConverter({style: 'decimal', maximumFractionDigits: 0});
             
