@@ -1,39 +1,56 @@
-define(['ojs/ojcore', 'ojs/ojmodel', 'knockout'], function (oj, ko) {
+define(['ojs/ojcore', 'jquery', 'knockout', 'ojs/ojmodel'], function (oj, $, ko ) {
 
-    //var partyid =ko.observable(this.partyid());
-//    createPartyModel1: function() {
-//        $.get('http://129.146.2.73:32766/party/1', function(data, status) {
-//                    console.log(data);
-//                }, 'json');
-//        
-//    } 
+//    var self= this;
+//    self.data = ko.observable();
+//    self.dataLoaded = ko.observable(false);
+    
+
+
 
 
     var PartyFactory = {
 
-        //partyid: ko.observable(this.partyId),
-        resourceUrl: "http://129.146.23.163:32035/party/",
+//         partyHost: data.node.nodes[2],
+//         console.log(partyHost);
 
-        createPartyModel: function (partyId, partyname) {
+        //partyid: ko.observable(this.partyId),
+       
+        
+
+
+        createPartyModel: function (partyId, partyname, url) {
+            var resourceUrl = url + "/party/" ;
             console.log(partyId);
             console.log(partyname);
-            
-
-//        if(partyId === undefined || partyId > 499) {
-//                
-//                return false;
-//            }
+            console.log(resourceUrl);
             if (partyname !== null) {
-                    var Party = oj.Model.extend({urlRoot: this.resourceUrl + "match/" + partyname,
-                        idAttribute: partyId});
-                    return new Party();
+            var Party = oj.Model.extend({urlRoot: resourceUrl + "match/" + partyname,
+            idAttribute: partyname});
+            return new Party();
             } else if (partyId !== null) {
-                    var Party = oj.Model.extend({urlRoot: this.resourceUrl + partyId,
-                        idAttribute: partyId});
-                    return new Party();
+            var Party = oj.Model.extend({urlRoot: resourceUrl + partyId,
+            idAttribute: partyId});
+            return new Party();
             }
 
-        }
+        },
+        fetchUrl : function () {
+            var id = null;
+            var uri = "http://129.146.1.229:31490/fsgbu/10.0.0.71:2394/default/party-service";
+            var serviceUrl = oj.Model.extend({urlRoot: uri, idAttribute: id});
+            return new serviceUrl();
+            
+                    
+//        $.get("http://129.146.1.229:31490/fsgbu/10.0.0.71:2394/default/party-service", function (data, status) {
+//                //alert("Data: " + data + "\nStatus: " + status);
+//               console.log(data);
+//               console.log(status);
+//               self.data(data.serviceURL);
+//               self.dataLoaded(true);
+//               console.log("Json Parse Data: " + self.data());
+// 
+//           });
+       }
     }
     return PartyFactory;
 });
